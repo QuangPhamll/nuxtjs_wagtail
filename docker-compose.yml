@@ -1,18 +1,23 @@
 version: "3"
 services:
-  db_sample:
+  db:
     restart: always
     image: "postgres:11"
+    ports:
+      - "5342:5342"
 
-  backend_sample:
+  backend:
     build: ./backend/
     ports:
       - "7999:7999"
+    command: ["./wait-for-it.sh", "db:5342", "--", "bash", "-c",
+              "python manage.py migrate
+              && exec gunicorn backend.wsgi:application --bind 0.0.0.0:7999 --workers 3"]
 
-  frontend_sample:
+  frontend:
     build: ./frontend/
     ports:
       - "8000:8000"
     depends_on:
-      - db_sample
-      - backend_sample
+      - db
+      - backend

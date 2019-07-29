@@ -18,10 +18,11 @@ COPY . /backend/
 WORKDIR /backend/
 
 #RUN python manage.py migrate
+RUN chmod +x wait-for-it.sh
 
 RUN useradd wagtail
 RUN chown -R wagtail /backend
 USER wagtail
 
 EXPOSE 7999
-CMD exec gunicorn backend.wsgi:application --bind 0.0.0.0:7999 --workers 3
+#CMD exec gunicorn backend.wsgi:application --bind 0.0.0.0:7999 --workers 3
