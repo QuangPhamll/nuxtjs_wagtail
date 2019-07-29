@@ -1,0 +1,21 @@
+version: "3"
+services:
+  db_sample:
+    restart: always
+    image: "postgres:11"
+
+  backend_sample:
+    build: ./backend/
+    volumes:
+      - ./backend:/backend
+    ports:
+      - "7999:7999"
+    depends_on:
+      - db_sample
+
+  frontend_sample:
+    build: ./frontend/
+    ports:
+      - "8000:8000"
+    links:
+      - backend_sample:backend_sample

@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+# Serverless directories
+.serverless
+
+# IDE / Editor
+.idea
+.editorconfig
+
+# Service worker
+sw.*
+
+# Mac OSX
+.DS_Store
