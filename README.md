@@ -10,3 +10,4 @@ docker-compose build
 docker-compose up
 backend cms: http://localhost:7999/admin
 fronttend: http://localhost:8000
+
