@@ -1,5 +1,5 @@
 # base_site
-A sample projet of full-stack web app with wagtail postgres for backend and nuxtjs vue for frontend.
+A sample project of full-stack web app with wagtail postgres for backend and nuxtjs vue for frontend, run with docker-compose
 ## Build with:
 ```
     - django: v.2.2
