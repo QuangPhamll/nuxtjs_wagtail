@@ -18,6 +18,8 @@ docker-compose up
 backend cms:
 ```
 http://localhost:7999/admin
+user: admin
+password: changeme
 ```
 frontend:
 ```
