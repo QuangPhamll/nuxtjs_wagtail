@@ -19,6 +19,7 @@ WORKDIR /backend/
 
 #RUN python manage.py migrate
 RUN chmod +x wait-for-it.sh
+RUN chmod +x docker-entrypoint.sh
 RUN useradd wagtail
 RUN chown -R wagtail /backend
 USER wagtail
