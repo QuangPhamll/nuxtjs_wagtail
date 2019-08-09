@@ -8,14 +8,22 @@ services:
 
   backend:
     build: ./backend/
+    volumes:
+      - ./backend:/backend
     ports:
       - "7999:7999"
     command: ["./wait-for-it.sh", "db:5342", "--", "./docker-entrypoint.sh"]
 
   frontend:
     build: ./frontend/
+    volumes:
+      - ./frontend:/usr/src/nuxt-app
+      - node_modules:/usr/src/nuxt-app/node_modules/
     ports:
       - "8000:8000"
     depends_on:
       - db
       - backend
+
+volumes:
+  node_modules:
