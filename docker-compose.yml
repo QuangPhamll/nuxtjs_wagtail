@@ -23,6 +23,7 @@ services:
       - node_modules:/usr/src/nuxt-app/node_modules/
     ports:
       - "8000:8000"
+    command: [sh, -c, "npm install && npm run dev"]
     depends_on:
       - db
       - backend
