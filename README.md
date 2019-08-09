@@ -25,7 +25,7 @@ frontend:
 ```
 http://localhost:8000
 ```
-### Run command inside container:
+## Run command inside container:
 - Backend example: `docker-compose run backend python manage.py`
 
 - Fontend example: `docker-compose run --no-deps frontend npm -v`
