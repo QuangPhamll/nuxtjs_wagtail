@@ -3,6 +3,8 @@ services:
   db:
     restart: always
     image: "postgres:11"
+    volumes:
+      - db-data:/var/lib/postgresql/data
     ports:
       - "5342:5342"
 
@@ -26,4 +28,5 @@ services:
       - backend
 
 volumes:
+  db-data:
   node_modules:
