@@ -2,10 +2,10 @@
 A initial environment of full-stack web app with wagtail postgres for backend and nuxtjs vue for frontend, run with docker-compose
 ## Build with:
 ```
-- django: v.2.2
-- wagtail: v.2.5
+- django: v.3.0.3
+- wagtail: v.2.8
 - postgres: 11
-- nuxjs: v.2.8
+- nuxjs: v.2.11.0
 - docker
 ```
 ## Run app:
