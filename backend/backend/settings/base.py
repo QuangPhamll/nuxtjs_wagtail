@@ -23,6 +23,19 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 # Application definition
 
+ADVANCED_INSTALLED_APPS = [
+    # Support the advanced function for wagtail or django
+    'rest_framework',
+    'wagtail.api.v2',
+]
+
+ADVANCED_MIDDLEWARE = [
+    # Support the advanced function for wagtail of django
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+
 INSTALLED_APPS = [
     'home',
     'search',
@@ -48,7 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+] + ADVANCED_INSTALLED_APPS
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -61,7 +74,7 @@ MIDDLEWARE = [
 
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
-]
+] + ADVANCED_MIDDLEWARE
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -96,7 +109,6 @@ DATABASES = {
         'USER': 'postgres',
         'HOST': 'db',
         'PORT': 5432,
-        # 'PASSWORD': 'changeme',
     }
 }
 

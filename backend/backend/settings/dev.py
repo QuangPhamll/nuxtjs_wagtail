@@ -11,6 +11,10 @@ ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:8000/",
+    "http://127.0.0.1:8000",
+]
 
 try:
     from .local import *
