@@ -16,11 +16,8 @@ import axios from 'axios'
 
 export default {
   async asyncData ({ req, res }) {
-    if (process.server) {
-      const {data} = await axios.get(process.env.API_BACKEND + '/api/v2/pages/?slug=home');
-      return { homePageData: data.items[0] }
-    }
-    return {}
+    const {data} = await axios.get(process.env.API_BACKEND + '/api/v2/pages/?slug=home');
+    return {homePageData: data.items[0]}
   },
 }
 </script>
