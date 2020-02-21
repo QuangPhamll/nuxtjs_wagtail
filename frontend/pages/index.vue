@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from '~/plugins/axios'
 
 export default {
   async asyncData ({ req, res }) {
-    const {data} = await axios.get(process.env.API_BACKEND + '/api/v2/pages/?slug=home');
+    const {data} = await axios.get('/api/v2/pages/?slug=home');
     return {homePageData: data.items[0]}
   },
 }

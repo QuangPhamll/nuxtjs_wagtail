@@ -25,6 +25,13 @@ frontend:
 ```
 http://localhost:8000
 ```
+Get api from backend with nuxtjs plugin ```~/plugins/axios``` not only ```axios```:
+```
+import axios from '~/plugins/axios'
+....
+const {data} = await axios.get('/api/v2/pages/?slug=home');
+....
+```
 ## Run command inside container:
 - Backend example: `docker-compose run backend python manage.py`
 

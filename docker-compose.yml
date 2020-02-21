@@ -25,7 +25,7 @@ services:
       - "8000:8000"
     command: [sh, -c, "npm install && npm run dev"]
     environment:
-      - API_BACKEND=http://backend:7999
+      - URL_BACKEND_SERVER=http://backend:7999
     depends_on:
       - db
       - backend

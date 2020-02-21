@@ -43,5 +43,9 @@ export default {
     */
     extend(config, ctx) {
     }
+  },
+
+  env: {
+    URL_BACKEND_CLIENT: "http://localhost:7999"
   }
 }
