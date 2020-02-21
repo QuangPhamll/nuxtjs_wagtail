@@ -25,7 +25,7 @@ frontend:
 ```
 http://localhost:8000
 ```
-Get api from backend with nuxtjs plugin ```~/plugins/axios``` not only ```axios```:
+Recommended to get api from backend with nuxtjs plugin ```~/plugins/axios``` not only ```axios```:
 ```
 import axios from '~/plugins/axios'
 ....
